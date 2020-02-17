@@ -3,11 +3,11 @@ Starter project to write and debug cucumber-js features in TypeScript language.
 
 ## After cloning the repo
 
-* run the command `npm install`.
+* run the command `yarn install`.
 
 ## To execute the tests locally
 
-* run the command `npm test`.
+* run the command `yarn test`.
 
 ## To debug a scenario in Visual Studio Code
 
@@ -25,11 +25,11 @@ Starter project to write and debug cucumber-js features in TypeScript language.
 
 ## To check for typescript and linting errors
 
-* run the command `npm run build`.
+* run the command `yarn run build`.
 
 ## To view the html report of the last run
 
-* run the command `npm run report`.
+* run the command `yarn run report`.
 
 ## To create a new step
 
@@ -58,7 +58,7 @@ Starter project to write and debug cucumber-js features in TypeScript language.
 
 * add your custom option to the CLI that starts cucumber:
 ```sh
-./node_modules/.bin/cucumber-js features/**/*.feature --foo=bar 
+./node_modules/.bin/cucumber-js features/**/*.feature --foo=bar
 ```
 * use it at runtime:
 ```js
