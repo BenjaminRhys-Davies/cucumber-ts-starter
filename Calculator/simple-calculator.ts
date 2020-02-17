@@ -1,22 +1,21 @@
-import { Logger } from '../../loggers/common-logger';
+import { Logger } from '../cucumber/loggers/common-logger';
 
-export class SimpleMathsCalculator implements Calculator {
+export class SimpleCalculator implements Calculator {
   private currentValue = 0;
-  constructor(private logger: Logger) {
+  constructor (private logger: Logger) {
     this.logger = logger;
   }
-  public startWith(value: number): Calculator {
+  public startWith (value: number): Calculator {
     this.logger.info(`startWith(${value})`);
     this.currentValue = value;
     return this;
   }
-  public incrementBy(value: number): Calculator {
+  public incrementBy (value: number): Calculator {
     this.logger.info(`incrementBy(${value})`);
     this.currentValue += value;
     return this;
   }
-  public get result(): number {
-    this.logger.info(`get result() => ${this.currentValue}`);
+  public get result (): number {
     return this.currentValue;
   }
 }

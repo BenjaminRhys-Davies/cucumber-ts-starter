@@ -5,13 +5,13 @@ Feature: Simple maths
   I want to increment variables
 
 # use @noOpLogger to deactivate any internal logging
-# use @simpleLogger to activate internal logging 
+# use @simpleLogger to activate internal logging
 # if you need to create a custom logger : create & configure your logger in loggers/index.ts
 
 Background: Calculator
-  Given I have a simple maths calculator
+  Given I have a simple calculator
 
-@debug @only 
+@debug @only
 Scenario: easy maths
   Given a variable set to 11
   When I increment the variable by 1
@@ -26,4 +26,3 @@ Scenario Outline: much more complex stuff
     | 100 | 5         | 105    |
     | 99  | 1234      | 1333   |
     | 12  | 5         | 17     |
-    

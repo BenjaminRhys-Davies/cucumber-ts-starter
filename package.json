@@ -4,16 +4,12 @@
   "description": "Starter project to write and debug cucumber-js features in TypeScript language",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf build && npm run format && npm run lint && tsc ",
-    "cucumber": "./node_modules/cucumber/bin/cucumber-js features/**/*.feature --foo=bar --logLevel=error --require 'world/custom-world.ts' --require 'step-definitions/**/*.ts' --require 'hooks/**/*.ts'  --require-module ts-node/register --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format json:reports/cucumber-report.json --format summary --format progress-bar --format node_modules/cucumber-pretty",
-    "snippets": "./node_modules/cucumber/bin/cucumber-js features/**/*.feature --dry-run --require 'world/custom-world.ts' --require 'step-definitions/**/*.ts' --require 'hooks/**/*.ts'  --require-module ts-node/register --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format snippets --tags @only",
-    "eslint-fix": "eslint ./ --ext .js,.ts,.tsx --fix",
-    "eslint-init": "eslint --init",
-    "format": "prettier --write \"{domains,features,hooks,loggers,reporters,step-definitions}/**/*.{ts,tsx,css,html}\" ",
+    "build": "rimraf build && tsc",
+    "cucumber": "./node_modules/.bin/cucumber-js features/**/*.feature --foo=bar --logLevel=error --require cucumber/world/custom-world.ts --require cucumber/step-definitions/**/*.ts --require cucumber/hooks/**/*.ts  --require-module ts-node/register --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format json:reports/cucumber-report.json --format summary --format progress-bar --format node_modules/cucumber-pretty",
+    "snippets": "./node_modules/.bin/cucumber-js features/**/*.feature --dry-run --require cucumber/world/custom-world.ts --require cucumber/step-definitions/**/*.ts --require cucumber/hooks/**/*.ts  --require-module ts-node/register --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format snippets --tags @only",
     "lint": "eslint ./ --ext .js,.ts,.tsx --format visualstudio --no-color --max-warnings 10 --report-unused-disable-directives",
-    "report": "ts-node reporters/cucumber-html-reporter.ts",
+    "report": "ts-node cucumber/reporters/cucumber-html-reporter.ts",
     "test": "npm run cucumber && npm run report",
-    "tsc-init": "tsc --init",
     "tsc": "tsc"
   },
   "author": "Henri d'Orgeval",
@@ -24,7 +20,6 @@
     "@types/cucumber-html-reporter": "5.0.1",
     "@types/loglevel": "1.6.3",
     "@types/minimist": "1.2.0",
-    "@types/node": "12.12.12",
     "chai": "4.2.0",
     "cucumber": "6.0.5",
     "cucumber-html-reporter": "5.0.2",
@@ -36,13 +31,6 @@
     "typescript": "3.7.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "2.8.0",
-    "@typescript-eslint/parser": "2.8.0",
-    "eslint": "6.7.0",
-    "eslint-config-prettier": "6.7.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-prettier": "3.1.1",
-    "mem": "6.0.0",
-    "prettier": "1.19.1"
+    "@types/node": "13.7.1"
   }
 }

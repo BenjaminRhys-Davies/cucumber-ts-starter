@@ -8,7 +8,7 @@
       "**/CVS": true,
       "**/.DS_Store": true,
       "**/build": true,
-      "node_modules/**": true,
+      "**/node_modules": true
     },
     "editor.tabCompletion": "on",
     "editor.formatOnPaste": true,
@@ -49,6 +49,9 @@
     "cucumberautocomplete.steps": [
         "step-definitions/**/*.ts"
     ],
-    "typescript.tsdk": "node_modules/typescript/lib"
-    
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+
 }
